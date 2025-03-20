@@ -6,6 +6,10 @@ Route::get('/register', function () {
     return view('register');
 })->name('register');
 
+Route::get('/forgotPassword', function () {
+    return view('forgotPassword');
+})->name('forgotPassword');
+
 
 /*
 |--------------------------------------------------------------------------
