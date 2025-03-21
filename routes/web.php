@@ -10,6 +10,11 @@ Route::get('/forgotPassword', function () {
     return view('forgotPassword');
 })->name('forgotPassword');
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 /*
 |--------------------------------------------------------------------------
